@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #e1a166;
+    background-color: #ffa4a4;
     text-align: center;
 }
 .container{
@@ -15,6 +15,17 @@ body{
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
+#msg{
+    font-size: 3rem;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.hide{
+    display: none;
+
+}
 #new-btn{
     height: 50px;
     width: 150px;
@@ -22,6 +33,7 @@ body{
     background-color: #000000;
     font-size: 14px;
     border-radius: 20px;
+    margin-bottom: 10px;
 }
 .game{
     height: 60vmin;
