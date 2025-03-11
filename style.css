@@ -7,6 +7,9 @@ body{
     background-color: #ffa4a4;
     text-align: center;
 }
+#heading{
+    margin-top: 20px;
+}
 .container{
     height: 70vh;
     display: flex;
@@ -18,7 +21,7 @@ body{
 #msg{
     font-size: 3rem;
     margin-bottom: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
     font-weight: 600;
 }
 
@@ -26,6 +29,28 @@ body{
     display: none;
 
 }
+#line {
+    position: absolute;
+    width: 0;
+    height: 5px;
+    background-color: rgb(19, 239, 198);
+    transition: 0.3s ease-in-out;
+    transform-origin: left center;
+    display: none;
+    z-index: 10; 
+    border-radius: 5px;
+}
+#line::after {
+    content: "➤"; /* Unicode arrow symbol */
+    font-size: 24px;
+    color: rgb(19, 239, 198);
+    position: absolute;
+    right: 0;  /* Aligns arrow at the end */
+    top: 50%;  /* Center it vertically */
+    transform: translate(50%, -50%) rotate(0deg); /* Adjust arrowhead position */
+    transform-origin: center;
+}
+
 #new-btn{
     height: 50px;
     width: 150px;
@@ -36,6 +61,7 @@ body{
     margin-bottom: 10px;
 }
 .game{
+    position: relative;
     height: 60vmin;
     width: 60vmin;
     display: flex;
@@ -53,6 +79,8 @@ body{
     color: #ffffff;
     background-color: #000000;
     font-size: 8vmin;
+    vertical-align: middle;
+    cursor: pointer;
 }
 #reset-btn{
     height: 50px;
