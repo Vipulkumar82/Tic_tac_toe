@@ -17,6 +17,12 @@ const winPatterns = [
     [6,7,8]
 ];
 
+const resetGame = () =>{
+    trun0 = true;
+    enableBoxes();
+    msgContainer.classList.add("hide");
+}
+
 boxes.forEach( (box) =>{
     box.addEventListener("click", () => {
         if (trun0){
@@ -31,7 +37,8 @@ boxes.forEach( (box) =>{
     })
 })
 
-const checkWinner = () =>{
+//Finding Winner
+let checkWinner = () =>{
     for (let pattern of winPatterns){
         let value1 = boxes[pattern[0]].innerText;
         let value2 = boxes[pattern[1]].innerText;
@@ -44,7 +51,29 @@ const checkWinner = () =>{
         }
     }
 }
-const showWinner = (winner) => {
+
+//when winner is found then print who is winner
+let showWinner = (winner) => {
     msg.innerHTML = `Winner is ${winner}`;
     msgContainer.classList.remove("hide");
+    disableBoxes();
 }
+
+//when any user is winner then all boxes should be disabled
+const disableBoxes = () =>{
+    for (let box of boxes){
+        box.disabled = true;
+    }
+};
+
+//when we click on reset and new Game 
+const enableBoxes = () =>{
+    for (let box of boxes){
+        box.disabled = false;
+        box.innerText = "";
+    }
+};
+
+
+newGameBtn.addEventListener("click",resetGame);
+resetBtn.addEventListener("click",resetGame);
